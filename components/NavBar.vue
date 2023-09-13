@@ -1,42 +1,46 @@
 <template>
-<nav :class="['navbar', isTransparent ? 'transparent' : '']">
+  <nav :class="['navbar', isTransparent ? 'transparent' : '']">
     <img src="openlogger.png" alt="Logo" class="navbar-logo" />
 
     <ul class="navbar-list">
       <li class="navbar-item">
-        <NuxtLink to="/" class="navbar-link" active-class="active"
-          > {{ $t('home') }} </NuxtLink
-        >
+        <NuxtLink to="/" class="navbar-link" active-class="active">
+          {{ $t("home") }}
+        </NuxtLink>
       </li>
-         <li class="navbar-item">
-        <NuxtLink to="/theservice" class="navbar-link" active-class="active"
-          > {{ $t('theService') }}</NuxtLink
+      <li class="navbar-item">
+        <NuxtLink to="/theservice" class="navbar-link" active-class="active">
+          {{ $t("theService") }}</NuxtLink
         >
       </li>
       <li class="navbar-item">
-        <NuxtLink to="/benefits" class="navbar-link" active-class="active"
-          >{{ $t('benefits') }}</NuxtLink
-        >
+        <NuxtLink to="/benefits" class="navbar-link" active-class="active">{{
+          $t("benefits")
+        }}</NuxtLink>
       </li>
       <li class="navbar-item">
-        <NuxtLink to="/contact" class="navbar-link" active-class="active"
-          >{{ $t('contact') }}</NuxtLink
-        >
+        <NuxtLink to="/contact" class="navbar-link" active-class="active">{{
+          $t("contact")
+        }}</NuxtLink>
       </li>
       <li class="navbar-item">
-  <!-- <button @click="setLanguage('en')">
-    <img src="union-flag.jpeg" alt="English" title="Switch to English" />
-  </button> -->
-  <img src="union-flag.jpeg" alt="English Flag" @click="setLanguage('en')" />
-</li>
-<li class="navbar-item">
-  <!-- <button @click="setLanguage('sv')">
-    <img src="/sweden-flag.jpeg" alt="Swedish" title="Switch to Swedish" />
-  </button> -->
-  <img src="sweden-flag.jpeg" alt="Swedish Flag" @click="setLanguage('sv')" />
-
-</li>
    
+        <img
+          src="union-flag.jpeg"
+          class="flag-image"
+          alt="English Flag"
+          @click="setLanguage('en')"
+        />
+      </li>
+      <li class="navbar-item">
+  
+        <img
+          src="sweden-flag.jpeg"
+          class="flag-image"
+          alt="Swedish Flag"
+          @click="setLanguage('sv')"
+        />
+      </li>
     </ul>
   </nav>
 </template>
@@ -49,14 +53,13 @@ export default defineComponent({
   props: {
     isTransparent: {
       type: Boolean,
-      default: false
+      default: false,
     },
   },
-    methods: {
+  methods: {
     setLanguage(lang: string) {
-      (this as any).$i18n.locale = lang; 
-      
-    }
+      (this as any).$i18n.locale = lang;
+    },
   },
 });
 </script>
@@ -102,6 +105,10 @@ export default defineComponent({
   background-color: #b0a4a4;
 }
 .navbar.transparent {
-  background-color: rgba(255, 255, 255, 0.1); 
+  background-color: rgba(255, 255, 255, 0.1);
+}
+.flag-image {
+  width: 24px; 
+  height: auto; 
 }
 </style>

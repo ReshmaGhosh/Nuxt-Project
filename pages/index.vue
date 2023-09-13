@@ -1,14 +1,12 @@
 <template>
   <div>
-    <NavBar />
+  
+    <Home />
    
-    <div>Welcome to the Home page!</div>
   </div>
 </template>
 
 <script setup lang="ts">
-import NavBar from "../components/NavBar.vue"
+import NavBar from "../components/NavBar.vue";
+import Home from "./Home.vue";
 </script>
-
-
-

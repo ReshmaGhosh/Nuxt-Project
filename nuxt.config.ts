@@ -1,11 +1,18 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 
-
 export default {
   devtools: { enabled: true },
+
   modules: ["@nuxtjs/i18n"],
   i18n: {
-    locales: ["en", "sv"],
+    /* module options */
+    lazy: true,
+    langDir: "locales",
+    strategy: "prefix_except_default",
+    locales: [
+      { code: "en", iso: "en-US", file: "en-US.json" },
+      { code: "sv", iso: "sv-SE", file: "sv-SE.json" },
+    ],
     defaultLocale: "en",
     vueI18n: {
       fallbackLocale: "en",
