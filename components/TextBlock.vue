@@ -7,8 +7,8 @@
         :alt="imageAlt"
         class="text-block-image"
       />
-      <h1 v-if="title" class="text-block-title">{{ title }}</h1>
-      <p v-if="paragraph" class="text-block-paragraph">{{ paragraph }}</p>
+      <h1 v-if="title" class="text-block-title"><slot name="title">{{ title }}</slot></h1>
+      <p v-if="paragraph" class="text-block-paragraph"><slot>{{ paragraph }}</slot></p>
     </div>
   </div>
 </template>

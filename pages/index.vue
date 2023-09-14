@@ -1,6 +1,7 @@
 <template>
   <div id="home">
-    <Navbar :isTransparent="true" />
+    <NavBar :isTransparent="true" />
+
     <div class="transparent-box">
       <h2>All equipment connected to one and the same platform.</h2>
       <p>Digitize lab and hospital environments with OpenLogger.</p>
