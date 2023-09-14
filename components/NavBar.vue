@@ -5,22 +5,23 @@
     <ul class="navbar-list">
       <li class="navbar-item">
         <NuxtLink to="/" class="navbar-link" active-class="active">
-          {{ $t("home") }}
+            Home
         </NuxtLink>
       </li>
       <li class="navbar-item">
         <NuxtLink to="/theservice" class="navbar-link" active-class="active">
-          {{ $t("theService") }}</NuxtLink
+        The Service</NuxtLink
         >
       </li>
       <li class="navbar-item">
         <NuxtLink to="/benefits" class="navbar-link" active-class="active">{{
-          $t("benefits")
+          Benefits
+
         }}</NuxtLink>
       </li>
       <li class="navbar-item">
         <NuxtLink to="/contact" class="navbar-link" active-class="active">{{
-          $t("contact")
+          Contact
         }}</NuxtLink>
       </li>
       <li class="navbar-item">
@@ -45,24 +46,55 @@
   </nav>
 </template>
 
-<script lang="ts">
-import { defineComponent } from "vue";
+<script setup lang="ts">
+import { defineProps, withDefaults } from "vue";
 
-export default defineComponent({
-  name: "NavBar",
-  props: {
-    isTransparent: {
-      type: Boolean,
-      default: false,
-    },
-  },
-  methods: {
-    setLanguage(lang: string) {
-      (this as any).$i18n.locale = lang;
-    },
-  },
+const { isTransparent } = withDefaults(defineProps<{
+  isTransparent?: boolean;
+}>(), {
+  isTransparent: false,
 });
 </script>
+
+<style scoped>
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background-color: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.navbar-logo {
+  height: 50px;
+  margin-right: 1rem;
+}
+.navbar-list {
+  list-style-type: none;
+  display: flex;
+  gap: 1rem;
+  margin: 0;
+  padding: 0;
+}
+.navbar-item {
+  display: inline-block;
+}
+.navbar-link {
+  text-decoration: none;
+  color: rgb(58, 55, 55);
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+.navbar-link:hover, .active {
+  background-color: #b0a4a4;
+}
+.navbar.transparent {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+</style>
+
+
 
 <style scoped>
 .navbar {

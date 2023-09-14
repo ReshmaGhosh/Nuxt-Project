@@ -1,9 +1,9 @@
-
 <template>
   <NavBar />
   <div class="benefits-container">
     <div class="content-wrapper">
-      <TextBlock title="Monitoring and Alarms" />
+      <TextBlock title="Monitoring and Alarms" /> 
+     
       <TextBlock paragraph="Logging around the clock." />
       <TextBlock
         paragraph="Monitoring and alarm functions are the key to a well-functioning
@@ -53,24 +53,16 @@
         paragraph="It is always important to know how quickly a parameter can change when planning corrective actions. If a threshold is crossed and a problem occurs, do you have five minutes to solve the problem, or five hours before significant damage occurs?"
       />
       <p>
-        <NuxtLink to="/contact" class="contact-link">Contact us for a quote</NuxtLink>
+        <NuxtLink to="/contact" class="contact-link"
+          >Contact us for a quote</NuxtLink
+        >
       </p>
+      <Footer />
     </div>
   </div>
 </template>
 
-<script lang="ts">
-import { defineComponent } from "vue";
-import TextBlock from "../components/TextBlock.vue";
-import NavBar from "../components/NavBar.vue";
-
-export default defineComponent({
-  name: "Benefits",
-  components: {
-    TextBlock,
-    NavBar,
-  },
-});
+<script setup lang="ts">
 </script>
 
 <style scoped>
@@ -82,4 +74,3 @@ export default defineComponent({
   color: blue;
 }
 </style>
-

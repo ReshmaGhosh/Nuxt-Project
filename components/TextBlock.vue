@@ -13,32 +13,25 @@
   </div>
 </template>
 
-<script lang="ts">
-import { defineComponent, PropType } from "vue";
+<script setup lang="ts">
+import { defineProps } from "vue";
 
-export default defineComponent({
-  name: "TextBlock",
-  props: {
-    title: {
-      type: String,
-      required: false,
-      default: "",
-    },
-    paragraph: {
-      type: String,
-      required: false,
-      default: "",
-    },
-    imageSrc: {
-      type: String,
-      required: false,
-      default: "",
-    },
-    imageAlt: {
-      type: String,
-      required: false,
-      default: "Image description",
-    },
+const props = defineProps({
+  title: {
+    type: String,
+    default: "",
+  },
+  paragraph: {
+    type: String,
+    default: "",
+  },
+  imageSrc: {
+    type: String,
+    default: "",
+  },
+  imageAlt: {
+    type: String,
+    default: "Image description",
   },
 });
 </script>
@@ -57,7 +50,7 @@ export default defineComponent({
   max-width: 800px;
   padding: 0;
   margin: 0;
-  width: 100%; 
+  width: 100%;
 }
 
 .text-block-title {

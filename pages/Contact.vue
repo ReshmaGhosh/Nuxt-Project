@@ -1,5 +1,5 @@
 <template>
- <NavBar />
+  <NavBar />
   <div class="contact-container">
     <h1>Contact Details</h1>
 
@@ -14,31 +14,20 @@
 
     <button @click="submitForm">Submit</button>
   </div>
+  <Footer />
 </template>
 
-<script lang="ts">
+<script setup lang="ts">
 import { ref } from "vue";
 
-export default {
-  name: "ContactDetail",
-  setup() {
-    const name = ref("");
-    const email = ref("");
-    const message = ref("");
+const name = ref("");
+const email = ref("");
+const message = ref("");
 
-    const submitForm = () => {
-      console.log("Name:", name.value);
-      console.log("Email:", email.value);
-      console.log("Message:", message.value);
-    };
-
-    return {
-      name,
-      email,
-      message,
-      submitForm,
-    };
-  },
+const submitForm = () => {
+  console.log("Name:", name.value);
+  console.log("Email:", email.value);
+  console.log("Message:", message.value);
 };
 </script>
 
@@ -50,7 +39,7 @@ export default {
   border: 1px solid #e0e0e0;
   border-radius: 8px;
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
-   margin-top: 100px;
+  margin-top: 100px;
 }
 
 label {

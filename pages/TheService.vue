@@ -29,18 +29,10 @@
       >
     </p>
   </div>
+  <Footer />
 </template>
 
-<script lang="ts">
-import { defineComponent } from "vue";
-import TextBlock from "../components/TextBlock.vue";
-
-export default defineComponent({
-  name: "TheService",
-  components: {
-    TextBlock,
-  },
-});
+<script setup lang="ts">
 </script>
 
 <style scoped>
